@@ -110,6 +110,9 @@ function Footer() {
 }
 
 function Pizza({ data }) {
+  if (data.soldOut) {
+    return null;
+  }
   return (
     <>
       <li className="pizza">
