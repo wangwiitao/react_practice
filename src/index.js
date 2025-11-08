@@ -69,16 +69,19 @@ function Header() {
 }
 function Menu() {
   const pizzas = pizzaData;
+  // const pizzas = [];
   const pizzasNumber = pizzas.length;
   return (
     <main className="menu">
       <h2>Our Menu</h2>
-      {pizzasNumber > 0 && (
+      {pizzasNumber > 0 ? (
         <ul className="pizzas">
           {pizzas.map((item) => {
             return <Pizza key={item.name} data={item} />;
           })}
         </ul>
+      ) : (
+        <p>We're still working on our menu. Please come back later :)</p>
       )}
     </main>
   );
@@ -90,13 +93,17 @@ function Footer() {
   const isOpen = hour >= openHour && hour <= closeHour;
   return (
     <footer className="footer">
-      {isOpen && (
+      {isOpen ? (
         <div className="order">
           <p>
             We are open until {closeHour}:00. Come visit us or order online.
           </p>
           <button className="btn">Order</button>
         </div>
+      ) : (
+        <p>
+          We're happy to welcome you between {openHour}:00 and {closeHour}:00
+        </p>
       )}
     </footer>
   );
