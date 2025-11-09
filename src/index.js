@@ -75,14 +75,14 @@ function Menu() {
     <main className="menu">
       <h2>Our Menu</h2>
       {pizzasNumber > 0 ? (
-        <React.Fragment key='menu-fragment'>
+        <>
           <p>authentic Italian pizzas made with love</p>
           <ul className="pizzas">
             {pizzas.map((item) => {
               return <Pizza key={item.name} data={item} />;
             })}
           </ul>
-        </React.Fragment>
+        </>
       ) : (
         <p>We're still working on our menu. Please come back later :)</p>
       )}
