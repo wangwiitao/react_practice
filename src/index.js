@@ -108,17 +108,17 @@ function Footer() {
 }
 
 function Pizza({ data }) {
-  if (data.soldOut) {
-    return null;
-  }
+  // if (data.soldOut) {
+  //   return null;
+  // }
   return (
     <>
-      <li className="pizza">
+      <li className={`pizza ${data.soldOut ? "sold-out" : ""}`}>
         <img src={data.photoName} alt={data.name} />
         <div>
           <h3>{data.name}</h3>
           <p>{data.ingredients}</p>
-          <span>{data.price}</span>
+          <span>{data.soldOut ? "SOLD OUT" : data.price}</span>
         </div>
       </li>
     </>
