@@ -6,6 +6,15 @@ const messages = [
 ];
 
 export default function App() {
+  return (
+    <>
+      <Steps />
+      <Steps />
+    </>
+  );
+}
+
+function Steps() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
 
